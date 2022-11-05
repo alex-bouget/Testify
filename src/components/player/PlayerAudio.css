@@ -1,0 +1,37 @@
+.player-audio-progress,
+.player-audio-progress > div {
+  position: fixed;
+  bottom: 5%;
+  left: 20%;
+  max-width: 60%;
+  width: 60%;
+  height: 2%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.player-audio__clickable {
+  background-color: black;
+}
+
+.player-audio > p {
+  position: fixed;
+  bottom: 5%;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.player-audio > .player-audio-time {
+  left: 20%;
+}
+
+
+.player-audio > .player-audio-maxtime {
+  left: calc(80% - 1rem);
+}
+
+.player-audio__progress {
+    background-color: white;
+}
