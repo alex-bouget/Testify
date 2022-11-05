@@ -9,16 +9,33 @@ class PlayerAudio extends React.Component {
             duration: "",
             currentTime: "",
             progress: 0,
-            audio: this.props.audio,
+            audio: NaN,
+            audioName: "",
+            button: "play",
         }
     }
 
     changeAudio(audio) {
-        this.setState({ audio: audio });
+        this.setState({ audio: audio.props.audio, audioName: audio.props.name });
 
         const audioElement = document.getElementById('bg_music');
         audioElement.load();
         audioElement.play();
+
+        if (this.props.onchange) {
+            this.props.onchange(audio);
+        }
+    }
+
+    play() {
+        const audioElement = document.getElementById('bg_music');
+        if (audioElement.paused) {
+            audioElement.play();
+            this.setState({ button: "pause" });
+        } else {
+            audioElement.pause();
+            this.setState({ button: "play" });
+        }
     }
 
     formatTime(time) {

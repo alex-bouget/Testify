@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import Player from './components/player/Player';
-
+import Page from './components/page/page';
 
 
 function App() {
+  let player = React.createRef();
   return (
     <div className="App">
-      <Player audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+      <Page player={player} />
+      <Player ref={player} />
     </div>
   );
 }

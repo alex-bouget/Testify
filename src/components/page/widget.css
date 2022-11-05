@@ -1,0 +1,14 @@
+.widget {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #aeaeae;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000000;
+}
+
+.widget:hover {
+    background-color: #bfbfbf;
+}

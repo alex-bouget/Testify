@@ -7,27 +7,33 @@ class Player extends React.Component {
     constructor(props) {
         super(props);
         this.playerAudio = React.createRef();
-        this.data = [
-            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-        ]
-        this.i = 0;
+        this.state = {
+            name: "",
+        }
     }
 
-    changeAudio() {
-        this.i++;
-        console.log(this);
-        this.playerAudio.current.changeAudio(this.data[this.i%4]);
+    changeAudio(audioFile) {
+        this.playerAudio.current.changeAudio(audioFile);
+    }
+
+    play() {
+        this.playerAudio.current.play();
+        const button = document.getElementById('player-button');
+        button.innerHTML = this.playerAudio.current.state.button;
+    }
+
+    atChange(e) {
+        this.setState({ name: e.props.name });
     }
 
     render() {
         const that = this;
+        const { name } = this.state;
         return (
             <div className="player">
-                  <button onClick={() => that.changeAudio()}>Change Audio</button>
-                <PlayerAudio audio={ this.data[this.i] } ref={ this.playerAudio } />
+                <p>{ name }</p>
+                <button id="player-button" onClick={() => that.play()}>play</button>
+                <PlayerAudio audio="" ref={this.playerAudio} onchange={ (e) => that.atChange(e) } />
             </div>
         );
     }
