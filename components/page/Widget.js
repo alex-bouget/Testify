@@ -1,5 +1,4 @@
 import React from "react";
-import "./widget.css";
 
 class Widget extends React.Component {
     constructor(props) {

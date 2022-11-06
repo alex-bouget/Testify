@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import PlayerAudio from './PlayerAudio';
-import './Player.css';
 
 class Player extends React.Component {
     constructor(props) {
