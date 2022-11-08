@@ -83,7 +83,6 @@ class PlayerAudio extends React.Component {
         const progress = e.nativeEvent.x - target.offsetLeft;
         const progressPercent = progress / target.offsetWidth;
         const audio = document.getElementById('bg_music');
-        console.log(progressPercent);
         audio.currentTime = duration * progressPercent;
 
         this.timeupdate();

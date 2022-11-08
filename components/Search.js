@@ -10,7 +10,7 @@ class Search extends React.Component {
             main: props.main,
         };
         if (props.id != null && props.id != undefined) {
-            this.state.search = props.id  ;
+            this.state.search = props.id;
         }
     }
 

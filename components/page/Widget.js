@@ -6,7 +6,6 @@ class Widget extends React.Component {
     }
 
     onClick() {
-        console.log(this.props);
         this.props.player.current.changeAudio(this);
     }
     

@@ -12,25 +12,30 @@ class Main extends React.Component {
             id: props.id,
             player: React.createRef(),
             page: React.createRef(),
-            main: React.createRef()
+            main: React.createRef(),
+            search: React.createRef(),
         };
         this.state.main.current = this;
     }
 
     componentDidMount() {
-        fetch(this.state.api_fetch).then(response => response.json()).then(data => {
-            this.state.page.current.changeData(data);
-        });
+        this.changeData();
     }
 
     componentDidUpdate() {
+        this.changeData();
+    }
+
+    changeData() {
+        if (this.state.page.current == null) {
+            return;
+        }
+        if (this.state.id == null || this.state.id == undefined) {
+            return;
+        }
         fetch(this.state.api_fetch).then(response => response.json()).then(data => {
-            if (this.state.page.current == null) {
-                return;
-            }
             this.state.page.current.changeData(data);
             const url = this.state.api_fetch.split("/");
-            console.log(url);
             let to = "";
             if (url.length > 4) {
                 to = '/search/' + this.state.api_fetch.split("/")[4];
@@ -45,7 +50,7 @@ class Main extends React.Component {
     render() {
         return (
             <div className="App">
-                <Search main={this.state.main} id={this.state.id} />
+                <Search main={this.state.main} id={this.state.id} ref={this.state.search} />
                 <Page player={this.state.player} ref={this.state.page} />
                 <Player ref={this.state.player} />
             </div>
