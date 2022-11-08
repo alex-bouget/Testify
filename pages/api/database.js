@@ -71,6 +71,16 @@ let Database = new class {
             }
         }
     }
+
+    search(name_str) {
+        let result = [];
+        for (let key in this.file) {
+            if (this.file[key].name.toLowerCase().includes(name_str.toLowerCase())) {
+                result.push(this.file[key]);
+            }
+        }
+        return result;
+    }
 }
 
 export default Database;

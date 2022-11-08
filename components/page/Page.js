@@ -24,7 +24,6 @@ class Page extends React.Component {
     render() {
         const that = this;
         const { data } = this.state;
-        console.log(data);
         //{ data.map((item, index) => <Widget key={index} name={item.name} audio={item.audio} player={that.props.player} />) }
         if (data.length > 0) {
             return (

@@ -19,7 +19,8 @@ class PlayerAudio extends React.Component {
 
         const audioElement = document.getElementById('bg_music');
         audioElement.load();
-        audioElement.play();
+        audioElement.pause();
+        this.play();
 
         if (this.props.onchange) {
             this.props.onchange(audio);
@@ -30,10 +31,10 @@ class PlayerAudio extends React.Component {
         const audioElement = document.getElementById('bg_music');
         if (audioElement.paused) {
             audioElement.play();
-            this.setState({ button: "pause" });
+            this.setState({ button: "play" });
         } else {
             audioElement.pause();
-            this.setState({ button: "play" });
+            this.setState({ button: "pause" });
         }
     }
 
