@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">testify</string>
+    <string name="title_activity_main">testify</string>
+    <string name="package_name">com.boxinbox.gigly</string>
+    <string name="custom_url_scheme">com.boxinbox.gigly</string>
+</resources>

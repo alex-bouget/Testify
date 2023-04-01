@@ -1,0 +1,6 @@
+{
+  "appId": "com.boxinbox.gigly",
+  "appName": "testify",
+  "webDir": "out",
+  "bundledWebRuntime": false
+}

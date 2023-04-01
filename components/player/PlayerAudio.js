@@ -8,7 +8,7 @@ class PlayerAudio extends React.Component {
             duration: "",
             currentTime: "",
             progress: 0,
-            audio: NaN,
+            audio: "NaN",
             audioName: "",
             button: "play",
         }

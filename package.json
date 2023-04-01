@@ -9,9 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@capacitor/android": "^4.4.0",
+    "@capacitor/cli": "^4.4.0",
+    "@capacitor/core": "^4.4.0",
+    "@capacitor/ios": "^4.4.0",
     "@netlify/plugin-nextjs": "^4.28.4",
     "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "cookies-next": "^2.1.1",
+    "prisma": "^4.7.1"
   }
 }
